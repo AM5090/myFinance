@@ -38,6 +38,7 @@ public class UserAction {
 //        handleLogin();
         break;
       case "3":
+        authController.logout();
         System.out.println("Приложение завершило свою работу!");
         System.exit(0);
         break;

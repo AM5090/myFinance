@@ -20,12 +20,13 @@ public class AuthModel {
     return dbModel.addNewUser(jsonDataTree, name, password);
   }
 
-  public void login(ObjectNode newUserInfo, String name, String password) {
+  public void login(ObjectNode newUserInfo) {
     ObjectNode jsonDataTree = dbModel.getJsonDataTree();
-    dbModel.loginUser(jsonDataTree, newUserInfo, name, password);
+    dbModel.loginUser(jsonDataTree, newUserInfo);
   }
 
   public void logout() {
-
+    ObjectNode jsonDataTree = dbModel.getJsonDataTree();
+    dbModel.logoutUser(jsonDataTree);
   }
 }

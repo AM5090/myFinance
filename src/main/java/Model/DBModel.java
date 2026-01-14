@@ -59,15 +59,23 @@ public class DBModel {
     }
   }
 
-  public void loginUser(ObjectNode dataTree, ObjectNode newUserInfo, String name, String password) {
-//    JsonNode userAuth = dataTree.get("userAuth");
+  public void loginUser(ObjectNode dataTree, ObjectNode newUserInfo) {
 
-//    System.out.println("userAuth >>> " + userAuth);
-//    System.out.println("newUserInfo >>> " + newUserInfo);
+    ObjectNode userAuthNode = mapper.createObjectNode();
+    userAuthNode.put("id", newUserInfo.get("id").asText());
+    userAuthNode.put("name", newUserInfo.get("name").asText());
 
-    ObjectNode newUserObject = mapper.valueToTree(newUserInfo);
+    dataTree.set("userAuth", userAuthNode);
 
-    dataTree.put("userAuth", String.valueOf(newUserObject));
+    try {
+      mapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, dataTree);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public void logoutUser(ObjectNode dataTree) {
+    dataTree.set("userAuth", null);
 
     try {
       mapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, dataTree);

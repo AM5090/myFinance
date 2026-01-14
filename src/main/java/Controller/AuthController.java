@@ -11,19 +11,18 @@ public class AuthController {
     ObjectNode registrationData = authModel.registration(name, password);
 
     if (registrationData != null) {
-      login(registrationData, name, password);
+      login(registrationData);
       return true;
     }
 
     return false;
   }
 
-  public void login(ObjectNode newUserInfo, String name, String password) {
-    System.out.println("Автоматический вход");
-    authModel.login(newUserInfo, name, password);
+  public void login(ObjectNode newUserInfo) {
+    authModel.login(newUserInfo);
   }
 
   public void logout() {
-
+    authModel.logout();
   }
 }
