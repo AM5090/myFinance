@@ -1,0 +1,20 @@
+{
+  "users" : [ {
+    "id" : "1",
+    "name" : "ee",
+    "password" : "ss"
+  }, {
+    "id" : "2",
+    "name" : "eed",
+    "password" : "svs"
+  }, {
+    "id" : "3",
+    "name" : "as",
+    "password" : "asv"
+  }, {
+    "id" : "4",
+    "name" : "vev",
+    "password" : "vsd"
+  } ],
+  "userAuth" : "{\"id\":\"4\",\"name\":\"vev\",\"password\":\"vsd\"}"
+}
