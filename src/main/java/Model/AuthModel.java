@@ -58,6 +58,7 @@ public class AuthModel {
 
   public boolean userAuth() {
     ObjectNode jsonDataTree = dbModel.getJsonDataTree();
-    return dbModel.checkUserAuth(jsonDataTree);
+    JsonNode useAuth = jsonDataTree.get("userAuth");
+    return !useAuth.isNull();
   }
 }

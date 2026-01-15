@@ -1,4 +1,39 @@
 {
+  "wallets" : [ {
+    "ownerId" : 1,
+    "budgets" : [ {
+      "category" : "food",
+      "size" : 3000,
+      "fact" : 3000
+    }, {
+      "category" : "sport",
+      "size" : 2000,
+      "fact" : 2000
+    } ],
+    "expenses" : [ {
+      "category" : "food",
+      "size" : "500"
+    }, {
+      "category" : "sport",
+      "size" : "200"
+    }, {
+      "category" : "asva",
+      "size" : "33.0"
+    }, {
+      "category" : "wrgw",
+      "size" : "44.0"
+    } ],
+    "income" : [ {
+      "category" : "salary",
+      "size" : "50000"
+    }, {
+      "category" : "award",
+      "size" : "20000"
+    }, {
+      "category" : "vsrbva",
+      "size" : "44.0"
+    } ]
+  } ],
   "users" : [ {
     "id" : "1",
     "name" : "ee",
@@ -9,8 +44,8 @@
     "password" : "svs"
   }, {
     "id" : "3",
-    "name" : "afva",
-    "password" : "a"
+    "name" : "re",
+    "password" : "re"
   } ],
   "userAuth" : null
 }

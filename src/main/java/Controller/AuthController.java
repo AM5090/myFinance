@@ -22,4 +22,6 @@ public class AuthController {
   public boolean userAuth() {
     return authModel.userAuth();
   }
+
+
 }

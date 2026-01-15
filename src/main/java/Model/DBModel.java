@@ -28,6 +28,14 @@ public class DBModel {
     }
   }
 
+  public ObjectMapper getMapper() {
+    return mapper;
+  }
+
+  public File getJsonFile() {
+    return jsonFile;
+  }
+
   public JsonNode findUser(ObjectNode dataTree, String userName) {
     ArrayNode allUsers = (ArrayNode) dataTree.get("users");
 
@@ -84,9 +92,27 @@ public class DBModel {
     }
   }
 
-  public boolean checkUserAuth(ObjectNode dataTree) {
-    JsonNode useAuth = dataTree.get("userAuth");
-    System.out.println("useAuth >>> " + useAuth);
-    return !useAuth.isNull();
+  public ObjectNode getAuthUser(ObjectNode dataTree) {
+    JsonNode userAuth = dataTree.get("userAuth");
+    return (ObjectNode) userAuth;
+  }
+
+  public ObjectNode getUserWallet(ObjectNode dataTree) {
+    ObjectNode user = getAuthUser(dataTree);
+    String userId = user.get("id").asText();
+    ArrayNode allWallets = (ArrayNode) dataTree.get("wallets");
+
+    for (JsonNode wallet : allWallets) {
+      String walletOwnerId = wallet.get("ownerId").asText();
+      if (walletOwnerId.equals(userId)) {
+        return (ObjectNode) wallet;
+      }
+    }
+
+    return null;
+  }
+
+  public void addEntryInWallet() {
+
   }
 }
