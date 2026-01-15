@@ -59,7 +59,7 @@ public class DBModel {
     }
   }
 
-  public void loginUser(ObjectNode dataTree, ObjectNode newUserInfo) {
+  public void autoLoginUser(ObjectNode dataTree, ObjectNode newUserInfo) {
 
     ObjectNode userAuthNode = mapper.createObjectNode();
     userAuthNode.put("id", newUserInfo.get("id").asText());
@@ -82,5 +82,11 @@ public class DBModel {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  public boolean checkUserAuth(ObjectNode dataTree) {
+    JsonNode useAuth = dataTree.get("userAuth");
+    System.out.println("useAuth >>> " + useAuth);
+    return !useAuth.isNull();
   }
 }

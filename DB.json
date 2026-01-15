@@ -9,31 +9,8 @@
     "password" : "svs"
   }, {
     "id" : "3",
-    "name" : "as",
-    "password" : "asv"
-  }, {
-    "id" : "4",
-    "name" : "vev",
-    "password" : "vsd"
-  }, {
-    "id" : "5",
-    "name" : "asbvr",
-    "password" : "asv"
-  }, {
-    "id" : "6",
-    "name" : "rtbs",
-    "password" : "v"
-  }, {
-    "id" : "7",
-    "name" : "bwsber",
-    "password" : "av"
-  }, {
-    "id" : "8",
-    "name" : "asvbaba",
-    "password" : "asv"
+    "name" : "afva",
+    "password" : "a"
   } ],
-  "userAuth" : {
-    "id" : "8",
-    "name" : "asvbaba"
-  }
+  "userAuth" : null
 }

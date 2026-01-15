@@ -8,21 +8,18 @@ public class AuthController {
   AuthModel authModel = new AuthModel();
 
   public boolean registration(String name, String password) {
-    ObjectNode registrationData = authModel.registration(name, password);
-
-    if (registrationData != null) {
-      login(registrationData);
-      return true;
-    }
-
-    return false;
+    return authModel.registration(name, password);
   }
 
-  public void login(ObjectNode newUserInfo) {
-    authModel.login(newUserInfo);
+  public int login(String name, String password) {
+    return authModel.login(name, password);
   }
 
   public void logout() {
     authModel.logout();
+  }
+
+  public boolean userAuth() {
+    return authModel.userAuth();
   }
 }
